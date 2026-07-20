@@ -18,18 +18,14 @@ const currentPath = Astro.url.pathname;
     <header>
       <nav>
         <a href="/" class={currentPath === "/" ? "active" : ""}>Home</a>
-        <a href="/resume" class={currentPath === "/resume" ? "active" : ""}
-          >Resume</a
-        >
-        <a href="/thesis" class={currentPath === "/thesis" ? "active" : ""}
-          >Thesis</a
-        >
-        <a href="/projects" class={currentPath === "/projects" ? "active" : ""}
-          >Projects</a
-        >
-        <a href="/contact" class={currentPath === "/contact" ? "active" : ""}
-          >Contact</a
-        >
+
+        <a href="/resume" class={currentPath === "/resume" ? "active" : ""}>
+          Resume
+        </a>
+
+        <a href="/projects" class={currentPath === "/projects" ? "active" : ""}>
+          Selected Work
+        </a>
       </nav>
     </header>
 
