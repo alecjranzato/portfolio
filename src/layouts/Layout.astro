@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+const { title = "AJ Ranzato" } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+
+    <style></style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="/" class={currentPath === "/" ? "active" : ""}>Home</a>
+        <a href="/resume" class={currentPath === "/resume" ? "active" : ""}
+          >Resume</a
+        >
+        <a href="/thesis" class={currentPath === "/thesis" ? "active" : ""}
+          >Thesis</a
+        >
+        <a href="/projects" class={currentPath === "/projects" ? "active" : ""}
+          >Projects</a
+        >
+        <a href="/contact" class={currentPath === "/contact" ? "active" : ""}
+          >Contact</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
