@@ -17,7 +17,7 @@ body {
 
 h1 {
   max-width: 800px;
-  margin: 0 0 1rem;
+  margin: 0 auto 1rem;
   font-family: Georgia, serif;
   font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 400;
@@ -39,7 +39,7 @@ hr {
 
 p {
   max-width: 42rem;
-  margin: 0 0 1.5rem;
+  margin: 0 auto 1.5rem;
   font-size: 1.05rem;
 }
 
@@ -262,9 +262,11 @@ nav a.active {
 }
 
 .home-education {
-  color: #666;
-  font-size: 1.15rem;
-  margin: 2rem 0 3rem;
+  color: #777;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin: 2rem auto 3rem;
 }
 
 .selected-work {
