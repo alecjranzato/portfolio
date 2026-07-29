@@ -18,20 +18,20 @@ const base = import.meta.env.BASE_URL;
   <body>
     <header>
       <nav>
-        <a href={base} class={currentPath === `${base}` ? "active" : ""}>
+        <a href={`${base}/`} class={currentPath === `${base}/` ? "active" : ""}>
           Home
         </a>
 
         <a
-          href={`${base}resume/`}
-          class={currentPath === `${base}resume/` ? "active" : ""}
+          href={`${base}/resume/`}
+          class={currentPath === `${base}/resume/` ? "active" : ""}
         >
           Resume
         </a>
 
         <a
-          href={`${base}projects/`}
-          class={currentPath === `${base}projects/` ? "active" : ""}
+          href={`${base}/projects/`}
+          class={currentPath === `${base}/projects/` ? "active" : ""}
         >
           Selected Work
         </a>
