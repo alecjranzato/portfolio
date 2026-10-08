@@ -135,5 +135,117 @@ import Layout from "../layouts/Layout.astro";
         Download PDF
       </a>
     </section>
+    <section class="maps-gallery">
+      <h2>Maps and Visuals</h2>
+
+      <div class="maps-grid">
+        <figure class="map-item">
+          <button
+            class="map-open"
+            type="button"
+            data-fullsrc={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/LAFires_Insurance.gif`}
+            data-title="LA Wildfires and New Insurance Policies 2015–2021"
+            aria-label="Enlarge LA Wildfires and New Insurance Policies map"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/2017_wFire_LAFires_Insurance.png`}
+              alt="Urban spatial analysis map"
+              loading="lazy"
+            />
+          </button>
+          <figcaption>
+            LA Wildfires and New Insurance Policies 2015-2021 (Animated)
+          </figcaption>
+        </figure>
+
+        <figure class="map-item">
+          <button
+            class="map-open"
+            type="button"
+            data-fullsrc={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/Ranzato3_Buildings_Trees_Cambridge.png`}
+            data-title="LA Wildfires and New Insurance Policies 2015–2021"
+            aria-label="Enlarge LA Wildfires and New Insurance Policies map"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/Ranzato3_Buildings_Trees_Cambridge.png`}
+              alt="Neighborhood analysis map"
+              loading="lazy"
+            />
+          </button>
+          <figcaption>Cambridge Buildings and Tree Canopy</figcaption>
+        </figure>
+        <figure class="map-item">
+          <button
+            class="map-open"
+            type="button"
+            data-fullsrc={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/Ranzato3_NYC_SubwayEntrances_BikeRoutes.png`}
+            data-title="LA Wildfires and New Insurance Policies 2015–2021"
+            aria-label="Enlarge LA Wildfires and New Insurance Policies map"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/Ranzato3_NYC_SubwayEntrances_BikeRoutes.png`}
+              alt="Neighborhood analysis map"
+              loading="lazy"
+            />
+          </button>
+          <figcaption>NYC Subway Entrances and Bike Paths</figcaption>
+        </figure>
+      </div>
+      <!-- Enlarged image overlay -->
+      <div class="map-lightbox" id="map-lightbox" aria-hidden="true">
+        <button
+          type="button"
+          class="lightbox-close"
+          aria-label="Close enlarged image"
+        >
+          &times;
+        </button>
+
+        <img class="lightbox-image" alt="" />
+        <p class="lightbox-caption"></p>
+      </div>
+
+      <script>
+        const lightbox = document.getElementById("map-lightbox");
+        const lightboxImage = lightbox?.querySelector(".lightbox-image");
+        const lightboxCaption = lightbox?.querySelector(".lightbox-caption");
+        const closeButton = lightbox?.querySelector(".lightbox-close");
+
+        function closeLightbox() {
+          if (!lightbox || !lightboxImage) return;
+
+          lightbox.classList.remove("is-open");
+          lightbox.setAttribute("aria-hidden", "true");
+          lightboxImage.removeAttribute("src");
+          document.body.style.overflow = "";
+        }
+
+        document.querySelectorAll(".map-open").forEach((button) => {
+          button.addEventListener("click", () => {
+            if (!lightbox || !lightboxImage || !lightboxCaption) return;
+
+            lightboxImage.src = button.getAttribute("data-fullsrc") || "";
+            lightboxImage.alt = button.getAttribute("data-title") || "";
+            lightboxCaption.textContent =
+              button.getAttribute("data-title") || "";
+
+            lightbox.classList.add("is-open");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+            closeButton?.focus();
+          });
+        });
+
+        closeButton?.addEventListener("click", closeLightbox);
+
+        lightbox?.addEventListener("click", (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") closeLightbox();
+        });
+      </script>
+    </section>
   </div>
 </Layout>
