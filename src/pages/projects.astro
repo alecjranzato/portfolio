@@ -163,8 +163,8 @@ import Layout from "../layouts/Layout.astro";
             class="map-open"
             type="button"
             data-fullsrc={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/Ranzato3_Buildings_Trees_Cambridge.png`}
-            data-title="LA Wildfires and New Insurance Policies 2015–2021"
-            aria-label="Enlarge LA Wildfires and New Insurance Policies map"
+            data-title="Cambridge Buildings and Tree Canopy"
+            aria-label="Enlarge Cambridge Buildings and Tree Canopy map"
           >
             <img
               src={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/Ranzato3_Buildings_Trees_Cambridge.png`}
@@ -179,8 +179,8 @@ import Layout from "../layouts/Layout.astro";
             class="map-open"
             type="button"
             data-fullsrc={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/Ranzato3_NYC_SubwayEntrances_BikeRoutes.png`}
-            data-title="LA Wildfires and New Insurance Policies 2015–2021"
-            aria-label="Enlarge LA Wildfires and New Insurance Policies map"
+            data-title="NYC Subway Entrances and Bike Paths"
+            aria-label="Enlarge NYC Subway Entrances and Bike Paths map"
           >
             <img
               src={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/Ranzato3_NYC_SubwayEntrances_BikeRoutes.png`}
@@ -189,6 +189,41 @@ import Layout from "../layouts/Layout.astro";
             />
           </button>
           <figcaption>NYC Subway Entrances and Bike Paths</figcaption>
+        </figure>
+        <figure class="map-item">
+          <button
+            class="map-open"
+            type="button"
+            data-fullsrc={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/DenverParcelTreeCoverage.png`}
+            data-title="How Green is Denver?"
+            aria-label="Enlarge How Green is Denver? map"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/DenverParcelTreeCoverage.png`}
+              alt="Neighborhood analysis map"
+              loading="lazy"
+            />
+          </button>
+          <figcaption>How Green is Denver?</figcaption>
+        </figure>
+        <figure class="map-item">
+          <button
+            class="map-open"
+            type="button"
+            data-fullsrc={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/CambridgeParcelFAR.png`}
+            data-title="Average FAR in Cambridge Neighrborhood Nine"
+            aria-label="Enlarge Average FAR in Cambridge Neighrborhood Nine map"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/images/maps/CambridgeParcelFAR.png`}
+              alt="Neighborhood analysis map"
+              loading="lazy"
+            />
+          </button>
+          <figcaption>
+            Average FAR in Cambridge Neighrborhood Nine by Parcel and Land Use
+            Category
+          </figcaption>
         </figure>
       </div>
       <!-- Enlarged image overlay -->
